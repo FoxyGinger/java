@@ -1,17 +1,21 @@
-import HomeWork_1.Task1;
-import HomeWork_1.Task2;
-import HomeWork_1.Task3;
-import HomeWork_1.Task4;
+import HomeWork_2.Task1;
+import HomeWork_2.Task2;
+
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
         Task1 task1 = new Task1();
-        System.out.printf("%d\n", task1.getTriangleNumber(10));
+        String queryPart = "select * from students where ";
+        String json = "{\"name\":\"Ivanov\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}";
+        String sqlQuery = task1.generateSqlQuery(queryPart, json);
+        System.out.println(sqlQuery);
         Task2 task2 = new Task2();
-        System.out.println(task2.getFactorial(5));
-        Task3 task3 = new Task3();
-        task3.printPrimeNumbers(1000);
-        Task4 task4 = new Task4();
-        task4.calcExpression();
+        try {
+            String str = task2.readJsonFromFile("students.json");
+            task2.generateTextFromJson(str);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
