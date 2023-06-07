@@ -1,14 +1,19 @@
-import HomeWork_3.AllTasks;
+import HomeWork_5.PhoneBook;
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        AllTasks allTasks = new AllTasks();
-        ArrayList<Integer> array = allTasks.generateIntList(10, 100);
-        System.out.println(array.toString());
-        System.out.printf("min: %d\n", allTasks.getMinNumber(array));
-        System.out.printf("max: %d\n", allTasks.getMaxNumber(array));
-        System.out.printf("average: %d\n", allTasks.getAverage(array));
-        System.out.printf("removed all even number:\n%s\n", allTasks.removeEvenNumbers(array));
+        PhoneBook pb = new PhoneBook();
+        pb.add("Курт", "89213111116");
+        pb.add("Вуди", "89211111111");
+        pb.add("Вуди", "89211111112");
+        pb.add("Вуди", "89211111113");
+        pb.add("Джонни", "89212111114");
+        pb.add("Джонни", "89212111115");
+        pb.add("Линда", "89214111117");
+        pb.add("Линда", "89214111118");
+        pb.add("Линда", "89214111119");
+        pb.add("Линда", "89214111110");
+        pb.print();
     }
 }
