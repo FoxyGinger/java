@@ -1,14 +1,26 @@
-import HomeWork_3.AllTasks;
-import java.util.ArrayList;
+import HomeWork_6.Brand;
+import HomeWork_6.Colour;
+import HomeWork_6.Laptop;
+import HomeWork_6.LaptopFilter;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        AllTasks allTasks = new AllTasks();
-        ArrayList<Integer> array = allTasks.generateIntList(10, 100);
-        System.out.println(array.toString());
-        System.out.printf("min: %d\n", allTasks.getMinNumber(array));
-        System.out.printf("max: %d\n", allTasks.getMaxNumber(array));
-        System.out.printf("average: %d\n", allTasks.getAverage(array));
-        System.out.printf("removed all even number:\n%s\n", allTasks.removeEvenNumbers(array));
+        Laptop laptop1 = new Laptop(Brand.HP, Colour.RED);
+        Laptop laptop2 = new Laptop(Brand.HP, Colour.BLUE);
+        Laptop laptop3 = new Laptop(Brand.ASUS, Colour.BLUE);
+        Laptop laptop4 = new Laptop(Brand.SONY, Colour.BLACK);
+        Laptop laptop5 = new Laptop(Brand.LENOVO, Colour.RED);
+        Laptop laptop6 = new Laptop(Brand.SAMSUNG, Colour.WHITE);
+        Laptop laptop7 = new Laptop(Brand.SAMSUNG, Colour.BLUE);
+        Laptop laptop8 = new Laptop(Brand.SAMSUNG, Colour.RED);
+        Set<Laptop> laptops = new HashSet<>(Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5,
+                laptop6, laptop7, laptop8));
+
+        LaptopFilter laptopFilter = new LaptopFilter(laptops);
+        laptopFilter.inputFilter();
     }
 }
