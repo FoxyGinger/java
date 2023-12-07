@@ -1,19 +1,26 @@
-import HomeWork_5.PhoneBook;
-import java.util.ArrayList;
+import HomeWork_6.Brand;
+import HomeWork_6.Colour;
+import HomeWork_6.Laptop;
+import HomeWork_6.LaptopFilter;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        PhoneBook pb = new PhoneBook();
-        pb.add("Курт", "89213111116");
-        pb.add("Вуди", "89211111111");
-        pb.add("Вуди", "89211111112");
-        pb.add("Вуди", "89211111113");
-        pb.add("Джонни", "89212111114");
-        pb.add("Джонни", "89212111115");
-        pb.add("Линда", "89214111117");
-        pb.add("Линда", "89214111118");
-        pb.add("Линда", "89214111119");
-        pb.add("Линда", "89214111110");
-        pb.print();
+        Laptop laptop1 = new Laptop(Brand.HP, Colour.RED);
+        Laptop laptop2 = new Laptop(Brand.HP, Colour.BLUE);
+        Laptop laptop3 = new Laptop(Brand.ASUS, Colour.BLUE);
+        Laptop laptop4 = new Laptop(Brand.SONY, Colour.BLACK);
+        Laptop laptop5 = new Laptop(Brand.LENOVO, Colour.RED);
+        Laptop laptop6 = new Laptop(Brand.SAMSUNG, Colour.WHITE);
+        Laptop laptop7 = new Laptop(Brand.SAMSUNG, Colour.BLUE);
+        Laptop laptop8 = new Laptop(Brand.SAMSUNG, Colour.RED);
+        Set<Laptop> laptops = new HashSet<>(Arrays.asList(laptop1, laptop2, laptop3, laptop4, laptop5,
+                laptop6, laptop7, laptop8));
+
+        LaptopFilter laptopFilter = new LaptopFilter(laptops);
+        laptopFilter.inputFilter();
     }
 }
